@@ -1,0 +1,13 @@
+{
+  "name": "cyanjade-studio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/SuSWhW/CyanJade-Studio.git",
+  "keywords": [],
+  "author": "Q78KG",
+  "license": ""
+}

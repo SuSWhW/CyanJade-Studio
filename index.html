@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale = 1.0, user-scalable=no, shrink-to-fit=no">
+    <link id="cssLink" rel="stylesheet" href="./css/theme/light.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="contentContainer">
+            <div class="leftContent">
+                <div class="contentElement contentHover" onClick="contentElementFileClicked()">
+                    <p name="l_op_file"></p>
+                </div>
+                <div class="contentElement contentHover" onClick="contentElementBlockClicked()">
+                    <p name="l_op_block"></p>
+                </div>
+                <div class="contentElement contentHover" onClick="contentElementTutorialClicked()">
+                    <p name="l_op_tutorial"></p>
+                </div>
+                <div class="contentElement contentHover" onClick="contentElementSettingClicked()">
+                    <p name="l_op_setting"></p>
+                </div>
+            </div>
+            <div class="fileNameContainer">
+                <input type="text" id="fileNameInput" />
+                <p>.cjade</p>
+            </div>
+            <div id="runButtonDiv" class="runButton" onClick="rtButtonClicked()">
+                <img id="img_runButton" src="./res/svg/feather_cyan/play.svg" unselectable="on" />
+            </div>
+        </div>
+        <div style="position: absolute; top:0; left: 0; width: 0; height: 0">
+            <div id="opFileSelector" style="left: 30px;" class="selector">
+                <div class="selectorElement contentHover" onClick="newFileClicked()">
+                    <p name="l_sel_newFile"></p>
+                </div>
+                <div class="selectorElement contentHover" onClick="openFileClicked()">
+                    <p name="l_sel_openFile"></p>
+                </div>
+                <div class="selectorElement contentHover" onClick="saveFileClicked()">
+                    <p name="l_sel_saveFile"></p>
+                </div>
+            </div>
+            <div id="opBlockSelector" style="left: 110px;" class="selector">
+                <div style="height: 39px" class="selectorElement contentHover" onClick="loadLibrary()">
+                    <p name="l_sel_importBlockLib"></p>
+                </div>
+                <div style="height: 1px; width: 100%; background-color: var(--lightShadow); margin-left: 0;">&nbsp
+                </div>
+            </div>
+            <div id="opBlockElementSelector" style="top: -180px; left: 235px;" class="selector">
+            </div>
+            <div id="opSettingSelector" style="left: 270px;" class="selector">
+                <div class="selectorElement contentHover" onClick="changeTheme()">
+                    <p id="sel_dark" name="l_sel_dark" class="notDisplay"></p>
+                    <p id="sel_light" name="l_sel_light" class="display"></p>
+                </div>
+                <div class="selectorElement contentHover" onClick="changeLanguage()">
+                    <p name="l_sel_language"></p>
+                </div>
+            </div>
+        </div>
+        <div id="mouldSelectorContainer" class="mouldSelectorContainer">
+            <div id="MainThreadContainer" class="MainThreadContainer contentHover" onclick="mainFlowClicked()">
+                <p name="l_MainThreadContainer"></p>
+            </div>
+            <div style="width: 90%;margin-left: 5%;height: 1px;background-color:var(--lightShadow)"></div>
+            <div id="BLibContainer" class="BLibContainer">
+                <p name="l_BLibContainer"></p>
+                <img src="./res/svg/feather_cyan/plus.svg" onclick="addMould()" />
+            </div>
+            <div id="BLibMouldsContainer" class="BLibMouldsContainer">
+            </div>
+        </div>
+        <div id="playgroundContainer" class="playgroundContainerMainFlow">
+            <div id="canvasArea" class="canvasArea">
+                <div id="shadowArea" class="shadowArea">
+                    <div id="shadowBlock" class="shadowBlock"></div>
+                </div>
+                <div id="blockArea" class="blockArea">
+                    <div id="dragDivArea" class="dragArea notDisplay" ondragover="dragAreaDragDetected(event)" ondrop="dragAreaDropDetected(event)"></div>
+                </div>
+                <div id="lockArea" class="lockArea notDisplay"></div>
+            </div>
+        </div>
+        <div id="mouldInfoContainer" class="mouldInfoContainer notDisplay">
+            <div class="mouldInfoSelector">
+                <p name="l_mould_name"></p>
+            </div>
+            <div class="mouldInputSelector">
+                <input id="mouldName" type="text" placeholder="e.g. Add" onchange="onMouldNameChange()" />
+            </div>
+            <div class="mouldInfoSelector">
+                <p name="l_mould_type"></p>
+            </div>
+            <div class="mouldInputSelector" onclick="changeMouldType()">
+                <div class="mouldInputSelectorChoice contentHover">
+                    <p id="mouldTypeData" name="l_mould_type_data" class="display"></p>
+                    <p id="mouldTypeLogic" name="l_mould_type_logic" class="notDisplay"></p>
+                </div>
+            </div>
+            <div class="mouldInfoSelector">
+                <p name="l_mould_color"></p>
+            </div>
+            <div class="mouldInputSelector">
+                <input id="mouldColor" type="text" placeholder="e.g. #2c9678" onchange="onMouldColorChange()" />
+            </div>
+            <div class="mouldInfoSelector">
+                <p name="l_mould_size"></p>
+            </div>
+            <div class="mouldInputSelector">
+                <input id="mouldWidth" type="text" placeholder="Width: e.g. 1" onchange="onMouldWidthChange()" />
+            </div>
+            <div class="mouldInputSelector">
+                <input id="mouldHeight" type="text" placeholder="Height: e.g. 2" onchange="onMouldHeightChange()" />
+            </div>
+            <div class="mouldInfoSelector">
+                <p name="l_mould_input"></p>
+            </div>
+            <div class="mouldInputSelector">
+                <input id="mouldInputs" type="text" placeholder="e.g. a, b, c" onchange="onMouldInputsChange()" />
+            </div>
+            <div class="mouldInfoSelector" id="mouldInfoSelectorOutputText">
+                <p name="l_mould_output"></p>
+            </div>
+            <div class="mouldInputSelector" id="mouldInfoSelectorOutputInput">
+                <input id="mouldOutputs" type="text" placeholder="e.g. a" onchange="onMouldOutputsChange()" />
+            </div>
+        </div>
+        <div id="infoContainer" class="infoContainer">
+            <div class="leftInfoContainer">
+                <p name="l_i_studio"></p>
+                <p>&nbsp</p>
+                <p>v0.0.alpha</p>
+                <div style="width: 15px;height: 100%;"></div>
+                <p name="l_i_status"></p>
+                <p>:&nbsp</p>
+                <p id="pstatus"></p>
+                <div style="width: 15px;height: 100%;"></div>
+                <p name="l_i_blocks"></p>
+                <p>:&nbsp</p>
+                <p id="pblocks">0</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="text/javascript " src="./scripts/clickProtection.js "></script>
+</body>
+
+</html>
