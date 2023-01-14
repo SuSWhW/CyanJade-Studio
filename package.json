@@ -1,6 +1,6 @@
 {
   "name": "cyanjade-studio",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -9,5 +9,14 @@
   "repository": "https://github.com/SuSWhW/CyanJade-Studio.git",
   "keywords": [],
   "author": "Q78KG",
-  "license": ""
+  "license": "",
+  "build": {
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "productName": "CyanJade-Studio"
+  }
 }
