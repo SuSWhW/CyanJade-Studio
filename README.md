@@ -1,6 +1,6 @@
 # CyanJade-Studio 基于Electron的青玉案客户端
 
-[原项目仓库](https://github.com/SuSWhW/CyanJade-Studio-Online.git)
+[原项目仓库](https://github.com/Lazenander/CyanJade-Studio-Online.git)
 
 ## 使用方法
 
