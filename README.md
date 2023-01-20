@@ -2,8 +2,6 @@
 
 [原项目仓库](https://github.com/SuSWhW/CyanJade-Studio-Online.git)
 
-本人的水平就是依托答辩，请谅解软件界面的丑陋。
-
 ## 使用方法
 
 和网页端一样，教程请去原项目作者的B站
@@ -16,7 +14,11 @@
 npm install electron --save-dev
 ```
 
-安装electron-builder
+全局安装electron-builder
+
+```bash
+npm install electron-builder -g
+```
 
 
 ```bash
