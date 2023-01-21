@@ -2,11 +2,13 @@
 
 [原项目仓库](https://github.com/Lazenander/CyanJade-Studio-Online.git)
 
+**本项目会在原项目作者完成C艹客户端前持续更新，在C艹客户端完成后本项目会转为归档状态，不再更新**
+
 ## 使用方法
 
 和网页端一样，教程请去原项目作者的B站
 
-## 从源代码构建（请cd到项目代码文件夹内）
+## 从源代码构建
 
 安装electron
 
@@ -20,6 +22,7 @@ npm install electron --save-dev
 npm install electron-builder -g
 ```
 
+**请cd到源代码文件夹内**，然后运行
 
 ```bash
 electron-builder
